@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+        body{
+            margin: 0%;
+            background-color: rgb(92, 80, 110);
+            justify-items: center;
+        }
+
+        #text{
+            /* background: linear-gradient(black,rgb(191, 139, 139),black); */
+            background: linear-gradient(to right, rgb(25, 4, 4), rgb(198, 156, 156), rgb(31, 9, 9));
+            background-clip:text;
+            color:transparent;
+            font-size: 40px;
+            font-family: "Space Grotesk", serif;
+        }
+    
+        #form_container{
+            background:linear-gradient(#FFF574, #A1D6CB, #A19AD3);
+            font-family: "Space Grotesk", serif;
+            font-weight:600;
+            width:600px;
+            height: 50%;
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 10px;
+          
+        }
+
+        #field_Container{
+            padding-left: 25px;
+            /* border: none; */
+            border-radius: 10px;
+        }
+
+        legend{
+            background: linear-gradient( to left, rgb(233, 83, 83), rgb(69, 173, 69), rgb(90, 90, 236));
+            background-clip: text;
+            color: transparent;
+
+        }
+        #paraone{
+            font-size: 10px;
+            margin-top: 0px;
+        }
+
+        .area_input{
+
+            padding: 7px;
+            width: 80%;
+            border: solid 1px;
+            border-radius: 5px;
+        }
+
+        .area_input:hover{
+            border:  solid 2px rgb(225, 147, 2);
+        }
+
+         .date_and_state{
+            display:flex;
+            
+        }
+        .state_block{
+            margin-left: 6rem;
+        }
+        .area_date_input{
+            width: 10rem;
+            padding: 7px;
+            border: solid 1px;
+            border-radius: 5px;
+        }
+
+        .area_state_input{
+            width: 12rem;
+            padding: 7px;
+            border: solid 1px;
+            border-radius: 5px;
+        }
+        
+      
+        
+        #button_group{
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        #submit_btn{
+            background: linear-gradient(#0A97B0,#0A5EB0);
+            color: white;
+            font-size:20px;
+            font-weight: 550;
+            padding: 10px 80px;
+            border: none;
+            box-shadow: 0 0 5px 5px silver;
+            margin-bottom: 15%;
+            
+            
+            
+        }
+        #submit_btn:hover{
+            background-color: rgb(11, 136, 11);
+
+        }
+
+        #reset_btn{
+                   
+            background: linear-gradient(#0A97B0,#0A5EB0);
+            color: white;
+            font-size:20px;
+            font-weight: 550;
+            padding: 10px 80px;
+            border: none;
+            box-shadow: 0 0 5px 5px silver;
+            margin-bottom: 15%;
+            margin-right: 10px;            
+        }
+        
+        #reset_btn:hover{
+            background-color: rgb(11, 136, 11);
+
+        }
+         </style>
+
+       
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <h1 id="text">Form Validation</h1>
+
+        <form action="" id="form_container">
+            <fieldset id="field_Container">
+
+                <legend><h1>Registeration</h1></legend>
+
+                <!-- Name -->
+                <label for="" id="heading_label">Name</label><br>
+                <input type="text" placeholder="Name"  class="area_input" id="input_box">
+                <p id="paraone">First Character should be capital</p>
+                <div class="error error-border"  id="name_error"></div>
+                <br>
+                
+
+                <!-- Surname -->
+                <label for="" id="heading_label">Surname</label><br>
+                <input type="text" placeholder="Surname"   class="area_input" id="input_box2">
+                <p id="paraone">First Character should be capital</p>
+                <div class="error error-border" id="surname_error"></div>
+                <br>
+                
+                <!-- email-id -->
+                <label for="" id="heading_label">Email id</label><br>
+                <input type="text" placeholder="abc@gmail.com"  class="area_input" id="input_box3">
+                <div  class="error" id="email_error"></div>
+                <br>
+                
+                <!-- Contact -->
+                <label for="" id="heading_label">Contact</label><br>
+                <input type="text" placeholder="+918463764875"  class="area_input" id="input_box4">
+                <div class="error"  id="contact_error"></div>
+                <br>
+                
+                <!-- Password -->
+                <label for="" id="heading_label">Password</label><br>
+                <input type="password" placeholder="Enter your password"  class="area_input" id="input_box5">
+                <div class="error" id="pswd_error"></div>
+                <br>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <label for="" id="heading_label">Confirm Password</label><br>
+                <input type="password" placeholder="Retype password"  class="area_input" id="input_box6">
+                <div class="error" id="confirmPswd_error"></div>
+                <br>
+
+
+                <!-- Gender -->
+                <label for="" id="heading_label">Gender :</label>
+                <input type="radio" id="gender" name="mf" value="Male"  id="input_box7">
+                <label for="gender"> Male</label>
+                
+                <input type="radio" id="gender" name="mf" value="Female" id="input_box7">
+                <label for="gender"> Female</label>
+                <div class="error" id="error"></div>
+                <br><br>
+
+                
+                <!-- date of birth -->
+                 <div class="date_and_state">
+            <span class="date_block">
+                <label for="" id="heading_label">Date of birth:</label><br>
+                <input type="date"    class="area_date_input" id="input_box8">
+                <div class="error" id="date_error"></div>
+            </span>
+
+                
+           <!-- state -->
+
+                 <span class="state_block">
+                        <label for=""  id="heading_label">State :</label><br>
+                        <select id="" name="state" class="area_state_input" id="input_box9" >
+                        <option>HARYANA</option>
+                        <option>PUNJAB</option>
+                        <option>RAJASTHAN</option>
+                        <option>GUJRAT</option>
+                        <option>HIMACHAL PRADESH</option>
+                        <option>UTTAR PRADESH</option>
+                        </select>
+
+                        <div class="error" id="state_error"></div>
+                 </span>
+                </div>
+                <br>
+                <br>
+
+
+
+                <!-- Courses -->
+                <label for=""  id="heading_label"> Courses : </label>
+                <br><br>
+    
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Full stack</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Web designing</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Digital Marketing</label>
+                <br> 
+                <br>
+
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Python</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Graphics Designer</label>&nbsp;&nbsp;&nbsp;
+    
+                <input type="checkbox"  id="input_box10">
+                <label for=""> Cyber Security</label>
+                
+                <div class="error" id="course_error"></div><br>
+                <br><br><br>
+                
+                
+
+                <div id="button_group">
+                    <button id="submit_btn">Submit</button>
+                    <button id="reset_btn">RESET</button>
+               </div>
+                
+                
+            </fieldset>
+        </form>
+    
+
+        <script src="formvalidation.js"></script>
+</body>
+</html>
